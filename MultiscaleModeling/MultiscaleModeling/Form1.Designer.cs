@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.GBC_checkbox = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.int_radius_num_max = new System.Windows.Forms.NumericUpDown();
+            this.int_radius_num_min = new System.Windows.Forms.NumericUpDown();
+            this.intr_radius_label = new System.Windows.Forms.Label();
+            this.intrusion_button = new System.Windows.Forms.Button();
+            this.intrusion_num = new System.Windows.Forms.NumericUpDown();
+            this.intrusion_label = new System.Windows.Forms.Label();
+            this.import_cond_button = new System.Windows.Forms.Button();
             this.export_txt_button = new System.Windows.Forms.Button();
             this.export_jpg_button = new System.Windows.Forms.Button();
             this.import_button = new System.Windows.Forms.Button();
@@ -37,6 +46,9 @@
             this.NonP_check = new System.Windows.Forms.RadioButton();
             this.p_check = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.hexrand = new System.Windows.Forms.RadioButton();
+            this.hexright = new System.Windows.Forms.RadioButton();
+            this.hexleft = new System.Windows.Forms.RadioButton();
             this.neuman_check = new System.Windows.Forms.RadioButton();
             this.more_check = new System.Windows.Forms.RadioButton();
             this.matrixpanel = new System.Windows.Forms.Panel();
@@ -56,18 +68,33 @@
             this.size_button = new System.Windows.Forms.Button();
             this.size_label = new System.Windows.Forms.Label();
             this.width_txt = new System.Windows.Forms.TextBox();
-            this.import_cond_button = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rule4_chance = new System.Windows.Forms.NumericUpDown();
             this.mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.int_radius_num_max)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.int_radius_num_min)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intrusion_num)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.matrixpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seed_num)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rule4_chance)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
             this.mainPanel.AutoScroll = true;
+            this.mainPanel.Controls.Add(this.rule4_chance);
+            this.mainPanel.Controls.Add(this.label2);
+            this.mainPanel.Controls.Add(this.GBC_checkbox);
+            this.mainPanel.Controls.Add(this.label1);
+            this.mainPanel.Controls.Add(this.int_radius_num_max);
+            this.mainPanel.Controls.Add(this.int_radius_num_min);
+            this.mainPanel.Controls.Add(this.intr_radius_label);
+            this.mainPanel.Controls.Add(this.intrusion_button);
+            this.mainPanel.Controls.Add(this.intrusion_num);
+            this.mainPanel.Controls.Add(this.intrusion_label);
             this.mainPanel.Controls.Add(this.import_cond_button);
             this.mainPanel.Controls.Add(this.export_txt_button);
             this.mainPanel.Controls.Add(this.export_jpg_button);
@@ -95,6 +122,89 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(980, 650);
             this.mainPanel.TabIndex = 0;
+            // 
+            // GBC_checkbox
+            // 
+            this.GBC_checkbox.AutoSize = true;
+            this.GBC_checkbox.Location = new System.Drawing.Point(666, 131);
+            this.GBC_checkbox.Name = "GBC_checkbox";
+            this.GBC_checkbox.Size = new System.Drawing.Size(48, 17);
+            this.GBC_checkbox.TabIndex = 35;
+            this.GBC_checkbox.Text = "GBC";
+            this.GBC_checkbox.UseVisualStyleBackColor = true;
+            this.GBC_checkbox.CheckedChanged += new System.EventHandler(this.GBC_checkbox_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(135, 162);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 18);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "-";
+            // 
+            // int_radius_num_max
+            // 
+            this.int_radius_num_max.Location = new System.Drawing.Point(148, 160);
+            this.int_radius_num_max.Name = "int_radius_num_max";
+            this.int_radius_num_max.Size = new System.Drawing.Size(72, 20);
+            this.int_radius_num_max.TabIndex = 33;
+            // 
+            // int_radius_num_min
+            // 
+            this.int_radius_num_min.Location = new System.Drawing.Point(60, 160);
+            this.int_radius_num_min.Name = "int_radius_num_min";
+            this.int_radius_num_min.Size = new System.Drawing.Size(72, 20);
+            this.int_radius_num_min.TabIndex = 32;
+            // 
+            // intr_radius_label
+            // 
+            this.intr_radius_label.AutoSize = true;
+            this.intr_radius_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.intr_radius_label.Location = new System.Drawing.Point(4, 160);
+            this.intr_radius_label.Name = "intr_radius_label";
+            this.intr_radius_label.Size = new System.Drawing.Size(52, 18);
+            this.intr_radius_label.TabIndex = 31;
+            this.intr_radius_label.Text = "radius:";
+            // 
+            // intrusion_button
+            // 
+            this.intrusion_button.Location = new System.Drawing.Point(294, 130);
+            this.intrusion_button.Name = "intrusion_button";
+            this.intrusion_button.Size = new System.Drawing.Size(75, 23);
+            this.intrusion_button.TabIndex = 30;
+            this.intrusion_button.Text = "OK";
+            this.intrusion_button.UseVisualStyleBackColor = true;
+            this.intrusion_button.Click += new System.EventHandler(this.intrusion_button_Click);
+            // 
+            // intrusion_num
+            // 
+            this.intrusion_num.Location = new System.Drawing.Point(198, 130);
+            this.intrusion_num.Name = "intrusion_num";
+            this.intrusion_num.Size = new System.Drawing.Size(72, 20);
+            this.intrusion_num.TabIndex = 29;
+            // 
+            // intrusion_label
+            // 
+            this.intrusion_label.AutoSize = true;
+            this.intrusion_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.intrusion_label.Location = new System.Drawing.Point(3, 130);
+            this.intrusion_label.Name = "intrusion_label";
+            this.intrusion_label.Size = new System.Drawing.Size(189, 24);
+            this.intrusion_label.TabIndex = 28;
+            this.intrusion_label.Text = "Set intrusion number:";
+            // 
+            // import_cond_button
+            // 
+            this.import_cond_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.import_cond_button.Location = new System.Drawing.Point(7, 203);
+            this.import_cond_button.Name = "import_cond_button";
+            this.import_cond_button.Size = new System.Drawing.Size(135, 30);
+            this.import_cond_button.TabIndex = 27;
+            this.import_cond_button.Text = "Set conditions";
+            this.import_cond_button.UseVisualStyleBackColor = true;
+            this.import_cond_button.Click += new System.EventHandler(this.import_cond_button_Click);
             // 
             // export_txt_button
             // 
@@ -144,7 +254,7 @@
             // 
             this.groupBox2.Controls.Add(this.NonP_check);
             this.groupBox2.Controls.Add(this.p_check);
-            this.groupBox2.Location = new System.Drawing.Point(666, 79);
+            this.groupBox2.Location = new System.Drawing.Point(666, 39);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(228, 76);
             this.groupBox2.TabIndex = 1;
@@ -175,18 +285,54 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.hexrand);
+            this.groupBox1.Controls.Add(this.hexright);
+            this.groupBox1.Controls.Add(this.hexleft);
             this.groupBox1.Controls.Add(this.neuman_check);
             this.groupBox1.Controls.Add(this.more_check);
-            this.groupBox1.Location = new System.Drawing.Point(397, 79);
+            this.groupBox1.Location = new System.Drawing.Point(397, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(220, 76);
+            this.groupBox1.Size = new System.Drawing.Size(220, 125);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // hexrand
+            // 
+            this.hexrand.AutoSize = true;
+            this.hexrand.Location = new System.Drawing.Point(0, 101);
+            this.hexrand.Name = "hexrand";
+            this.hexrand.Size = new System.Drawing.Size(112, 17);
+            this.hexrand.TabIndex = 4;
+            this.hexrand.TabStop = true;
+            this.hexrand.Text = "hexagonal random";
+            this.hexrand.UseVisualStyleBackColor = true;
+            // 
+            // hexright
+            // 
+            this.hexright.AutoSize = true;
+            this.hexright.Location = new System.Drawing.Point(0, 78);
+            this.hexright.Name = "hexright";
+            this.hexright.Size = new System.Drawing.Size(97, 17);
+            this.hexright.TabIndex = 3;
+            this.hexright.TabStop = true;
+            this.hexright.Text = "hexagonal right";
+            this.hexright.UseVisualStyleBackColor = true;
+            // 
+            // hexleft
+            // 
+            this.hexleft.AutoSize = true;
+            this.hexleft.Location = new System.Drawing.Point(0, 55);
+            this.hexleft.Name = "hexleft";
+            this.hexleft.Size = new System.Drawing.Size(91, 17);
+            this.hexleft.TabIndex = 2;
+            this.hexleft.TabStop = true;
+            this.hexleft.Text = "hexagonal left";
+            this.hexleft.UseVisualStyleBackColor = true;
             // 
             // neuman_check
             // 
             this.neuman_check.AutoSize = true;
-            this.neuman_check.Location = new System.Drawing.Point(6, 42);
+            this.neuman_check.Location = new System.Drawing.Point(0, 32);
             this.neuman_check.Name = "neuman_check";
             this.neuman_check.Size = new System.Drawing.Size(88, 17);
             this.neuman_check.TabIndex = 1;
@@ -198,7 +344,7 @@
             // 
             this.more_check.AutoSize = true;
             this.more_check.Checked = true;
-            this.more_check.Location = new System.Drawing.Point(6, 19);
+            this.more_check.Location = new System.Drawing.Point(0, 9);
             this.more_check.Name = "more_check";
             this.more_check.Size = new System.Drawing.Size(57, 17);
             this.more_check.TabIndex = 0;
@@ -256,7 +402,7 @@
             // 
             this.bcond_label.AutoSize = true;
             this.bcond_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bcond_label.Location = new System.Drawing.Point(662, 52);
+            this.bcond_label.Location = new System.Drawing.Point(662, 9);
             this.bcond_label.Name = "bcond_label";
             this.bcond_label.Size = new System.Drawing.Size(294, 24);
             this.bcond_label.TabIndex = 14;
@@ -266,7 +412,7 @@
             // 
             this.neigh_label.AutoSize = true;
             this.neigh_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.neigh_label.Location = new System.Drawing.Point(393, 52);
+            this.neigh_label.Location = new System.Drawing.Point(393, 9);
             this.neigh_label.Name = "neigh_label";
             this.neigh_label.Size = new System.Drawing.Size(263, 24);
             this.neigh_label.TabIndex = 13;
@@ -308,7 +454,7 @@
             // start_button
             // 
             this.start_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.start_button.Location = new System.Drawing.Point(92, 170);
+            this.start_button.Location = new System.Drawing.Point(148, 203);
             this.start_button.Name = "start_button";
             this.start_button.Size = new System.Drawing.Size(135, 30);
             this.start_button.TabIndex = 7;
@@ -318,14 +464,14 @@
             // 
             // seed_num
             // 
-            this.seed_num.Location = new System.Drawing.Point(178, 110);
+            this.seed_num.Location = new System.Drawing.Point(178, 91);
             this.seed_num.Name = "seed_num";
             this.seed_num.Size = new System.Drawing.Size(72, 20);
             this.seed_num.TabIndex = 6;
             // 
             // seed_button
             // 
-            this.seed_button.Location = new System.Drawing.Point(294, 107);
+            this.seed_button.Location = new System.Drawing.Point(294, 92);
             this.seed_button.Name = "seed_button";
             this.seed_button.Size = new System.Drawing.Size(75, 23);
             this.seed_button.TabIndex = 5;
@@ -337,7 +483,7 @@
             // 
             this.seed_label.AutoSize = true;
             this.seed_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.seed_label.Location = new System.Drawing.Point(3, 106);
+            this.seed_label.Location = new System.Drawing.Point(3, 88);
             this.seed_label.Name = "seed_label";
             this.seed_label.Size = new System.Drawing.Size(169, 24);
             this.seed_label.TabIndex = 3;
@@ -370,16 +516,22 @@
             this.width_txt.Size = new System.Drawing.Size(72, 20);
             this.width_txt.TabIndex = 0;
             // 
-            // import_cond_button
+            // label2
             // 
-            this.import_cond_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.import_cond_button.Location = new System.Drawing.Point(92, 203);
-            this.import_cond_button.Name = "import_cond_button";
-            this.import_cond_button.Size = new System.Drawing.Size(135, 30);
-            this.import_cond_button.TabIndex = 27;
-            this.import_cond_button.Text = "Set conditions";
-            this.import_cond_button.UseVisualStyleBackColor = true;
-            this.import_cond_button.Click += new System.EventHandler(this.import_cond_button_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(743, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 16);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Rule 4 chance:";
+            // 
+            // rule4_chance
+            // 
+            this.rule4_chance.Location = new System.Drawing.Point(842, 128);
+            this.rule4_chance.Name = "rule4_chance";
+            this.rule4_chance.Size = new System.Drawing.Size(52, 20);
+            this.rule4_chance.TabIndex = 38;
             // 
             // mainForm
             // 
@@ -392,6 +544,9 @@
             this.Text = "MultiscaleModeling Damian Rudziński";
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.int_radius_num_max)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.int_radius_num_min)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intrusion_num)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -399,6 +554,7 @@
             this.matrixpanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seed_num)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rule4_chance)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -434,6 +590,19 @@
         private System.Windows.Forms.Button export_txt_button;
         private System.Windows.Forms.Button export_jpg_button;
         private System.Windows.Forms.Button import_cond_button;
+        private System.Windows.Forms.RadioButton hexright;
+        private System.Windows.Forms.RadioButton hexleft;
+        private System.Windows.Forms.RadioButton hexrand;
+        private System.Windows.Forms.Button intrusion_button;
+        private System.Windows.Forms.NumericUpDown intrusion_num;
+        private System.Windows.Forms.Label intrusion_label;
+        private System.Windows.Forms.NumericUpDown int_radius_num_min;
+        private System.Windows.Forms.Label intr_radius_label;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown int_radius_num_max;
+        private System.Windows.Forms.CheckBox GBC_checkbox;
+        private System.Windows.Forms.NumericUpDown rule4_chance;
+        private System.Windows.Forms.Label label2;
     }
 }
 
